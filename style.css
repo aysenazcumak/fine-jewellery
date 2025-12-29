@@ -1,0 +1,243 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TOP BAR */
+.top-bar {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.search {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.icons a,
+.icons span {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.sidebar h4 {
+    margin: 20px 0 10px;
+    font-size: 14px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* PRODUCTS AREA */
+.products {
+    flex: 1;
+    padding-left: 30px;
+    min-width: 0;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* ✅ GRID – BOZULMAYAN DÜZEN */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+/* PRODUCT CARD */
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    background: white;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.fav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.name {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.add-cart {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* =========================
+   HEADER DROPDOWN MENÜLER
+========================= */
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.account,
+.info {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    z-index:999;
+}
+
+/* Menü başlığı */
+.account > span,
+.info > span {
+    display: flex;
+    align-items: center;
+}
+
+/* Açılır menüler */
+.account-menu,
+.info-menu {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    min-width: 140px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Linkler */
+.account-menu a,
+.info-menu a {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+}
+
+.account-menu a:hover,
+.info-menu a:hover {
+    background: #f2f2f2;
+}
+
+/* Hover olunca aç */
+.account:hover .account-menu,
+.info:hover .info-menu {
+    display: flex;
+}
+.account-menu,
+.info-menu {
+    pointer-events: auto;
+}
+
+.account > span,
+.info > span {
+    pointer-events: none;
+}
+/* DROPDOWN BUTTON */
+.dropdown-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* DROPDOWN GENEL */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    min-width: 150px;
+    z-index: 9999;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+}
+
+.dropdown a:hover {
+    background: #f2f2f2;
+}
+
+.account,
+.info {
+    position: relative;
+}
+

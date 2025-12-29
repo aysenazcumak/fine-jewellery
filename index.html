@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fine Jewellery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    TÜM ÜRÜNLERDE 24 SAATTE KARGO!
+</div>
+
+<header class="header">
+    <h1 class="logo">FINE JEWELLERY</h1>
+
+    <input type="text" class="search" placeholder="Aradığınız ürünler burada...">
+<div class="icons">
+
+    <!-- GİRİŞ -->
+    <div class="account">
+        <button class="dropdown-btn" id="accountBtn">Giriş Yap ▾</button>
+        <div class="account-menu dropdown">
+            <a href="login.html">Giriş Yap</a>
+        </div>
+    </div>
+
+    <a href="favorites.html">♡ Favorilerim</a>
+    <a href="cart.html">Sepet</a>
+
+    <!-- BİLGİ -->
+    <div class="info">
+        <button class="dropdown-btn" id="infoBtn">Bilgi ▾</button>
+        <div class="info-menu dropdown">
+            <a href="contact.html">İletişim</a>
+            <a href="contact.html#map">Konum</a>
+        </div>
+    </div>
+
+</div>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <ul id="categoryList">
+            <li data-filter="all"><strong>Tüm Ürünler</strong></li>
+            <li data-filter="kolye">Kolye</li>
+            <li data-filter="yüzük">Yüzük</li>
+            <li data-filter="küpe">Küpe</li>
+            <li data-filter="bileklik">Bileklik</li>
+        </ul>
+
+        <h4>KARAT ARALIĞI</h4>
+        <ul id="caratList">
+            <li data-carat="all">Tüm Karatlar</li>
+            <li data-carat="0-1">0 – 1 Karat</li>
+            <li data-carat="1-2">1 – 2 Karat</li>
+            <li data-carat="2+">2 Karat Üzeri</li>
+        </ul>
+
+        <h4>FİYAT ARALIĞI</h4>
+        <ul id="priceList">
+            <li data-price="0-50000">0 – 50.000 TL</li>
+            <li data-price="50000-100000">50.000 – 100.000 TL</li>
+            <li data-price="100000+">100.000 TL ve üzeri</li>
+        </ul>
+
+    </aside>
+
+    <main class="products">
+
+        <div class="products-header">
+            <h2>Takı ve Aksesuar Modelleri</h2>
+            <select id="sort">
+                <option value="">Sıralama Seçiniz</option>
+                <option value="asc">Fiyata Göre Artan</option>
+                <option value="desc">Fiyata Göre Azalan</option>
+            </select>
+        </div>
+
+        <div class="grid">
+
+            <div class="product" data-id="1" data-category="kolye" data-carat="0.9">
+                <span class="fav">♡</span>
+                <img src="kolye1.jpg">
+                <p class="name">0,90 Karat Pırlanta Safir Kolye</p>
+                <p class="price">64.801 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="2" data-category="yüzük" data-carat="1.1">
+                <span class="fav">♡</span>
+                <img src="yuzuk.jpg">
+                <p class="name">1.10 Karat Pırlanta Safir Yüzük</p>
+                <p class="price">29.990 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="3" data-category="kolye" data-carat="1.05">
+                <span class="fav">♡</span>
+                <img src="kolye2.jpg">
+                <p class="name">1,05 Karat Pırlanta Tasarım Kolye</p>
+                <p class="price">95.847 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="4" data-category="bileklik" data-carat="1.05">
+                <span class="fav">♡</span>
+                <img src="bileklik.jpg">
+                <p class="name">1,05 Karat Pırlanta Safir Bileklik</p>
+                <p class="price">70.692 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="5" data-category="kupe" data-carat="1.15">
+                <span class="fav">♡</span>
+                <img src="kupe.jpg">
+                <p class="name">1,15 Karat Pırlanta Safir Küpe</p>
+                <p class="price">43.774 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="6" data-category="yuzuk" data-carat="0.26">
+                <span class="fav">♡</span>
+                <img src="yuzuk2.jpg">
+                <p class="name">0,26 Karat Pırlanta Baget Yüzük</p>
+                <p class="price">32.490 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="7" data-category="bileklik" data-carat="0.56">
+                <span class="fav">♡</span>
+                <img src="bileklik2.jpg">
+                <p class="name">0,56 Karat Pırlanta Safir Bileklik</p>
+                <p class="price">27.090 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="8" data-category="kupe" data-carat="1.3">
+                <span class="fav">♡</span>
+                <img src="kupe3.jpg">
+                <p class="name">1,30 Karat Pırlanta Baget Küpe</p>
+                <p class="price">113.950 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+           
+            <div class="product" data-id="9" data-category="kolye" data-carat="0.3">
+                <span class="fav">♡</span>
+                <img src="kolye3.jpg">
+                <p class="name">0,39 Karat Pırlanta Safir Kolye</p>
+                <p class="price">21.543 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+             <div class="product" data-id="10" data-category="bileklik" data-carat="0.3">
+                <span class="fav">♡</span>
+                <img src="bileklik4.jpg">
+                <p class="name">0,39 Karat Pırlanta Baget Bileklik</p>
+                <p class="price">52.847 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+            <div class="product" data-id="11" data-category="yuzuk" data-carat="0.6">
+                <span class="fav">♡</span>
+                <img src="yuzuk4.jpg">
+                <p class="name">0,63 Karat Pırlanta Safir Yüzük</p>
+                <p class="price">31.992 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="12" data-category="kupe" data-carat="0.7">
+                <span class="fav">♡</span>
+                <img src="kupe4.jpg">
+                <p class="name">0,78 Karat Pırlanta Safir Küpe</p>
+                <p class="price">31.089 TL</p>
+                <button class="add-cart">Sepete Ekle</button>
+            </div>
+
+            
+            
+        </div>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

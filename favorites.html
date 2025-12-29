@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorilerim</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .fav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .fav-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            position: relative; /* Silme butonu için gerekli */
+        }
+
+        .fav-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* Silme Butonu Stili */
+        .remove-btn {
+            background: none;
+            border: none;
+            color: red;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Favorilerim</h2>
+
+<div id="favList" class="fav-grid"></div>
+
+<br>
+<a href="index.html">← Ana Sayfa</a>
+
+<script>
+function renderFavorites() {
+    const favList = document.getElementById("favList");
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.length === 0) {
+        favList.innerHTML = "<p>Henüz favori ürün yok.</p>";
+    } else {
+        favList.innerHTML = ""; // Listeyi temizle ve yeniden doldur
+        favorites.forEach((p, index) => {
+            favList.innerHTML += `
+                <div class="fav-card">
+                    <button class="remove-btn" onclick="removeFromFav('${p.id || p.name}')">♥</button>
+                    <img src="${p.img}" onerror="this.src='placeholder.jpg'"> <p>${p.name}</p>
+                    <p class="price">${p.price}</p>
+                </div>
+            `;
+        });
+    }
+}
+
+// Favoriden Çıkarma Fonksiyonu
+function removeFromFav(id) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    // ID veya isim üzerinden filtrele
+    favorites = favorites.filter(p => (p.id || p.name) !== id);
+    
+    // Yeni listeyi kaydet
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    
+    // Ekranı güncelle
+    renderFavorites();
+}
+
+// Sayfa açıldığında listeyi yükle
+renderFavorites();
+</script>
+
+</body>
+</html>

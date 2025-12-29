@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sepetim | Fine Jewellery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="padding:20px;">Sepetim</h2>
+
+<div class="grid" id="cartGrid" style="padding:20px;"></div>
+
+<a href="index.html" style="padding:20px; display:inline-block;">← Alışverişe Devam Et</a>
+
+<script>
+function renderCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const grid = document.getElementById("cartGrid");
+
+    if (cart.length === 0) {
+        grid.innerHTML = "<p>Sepetinizde henüz ürün bulunmamaktadır.</p>";
+        return;
+    }
+
+    grid.innerHTML = cart.map((p, index) => `
+        <div class="product">
+            <span class="remove" data-index="${index}" style="cursor:pointer;color:red;font-size:18px;">sil</span>
+            <img src="${p.img}">
+            <p class="name">${p.name}</p>
+            <p class="price">${p.price}</p>
+        </div>
+    `).join("");
+
+    document.querySelectorAll(".remove").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const i = btn.dataset.index;
+            cart.splice(i, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        });
+    });
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
+

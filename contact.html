@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İletişim | Fine Jewellery</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Bilgi</h2>
+
+<!-- İLETİŞİM -->
+<div id="contact" class="section">
+    <h3>İletişim Bilgileri</h3>
+    <p><strong>Adres:</strong> Nişantaşı, Teşvikiye Cad. No:12, İstanbul</p>
+    <p><strong>Telefon:</strong> +90 212 555 55 55</p>
+    <p><strong>E-posta:</strong> info@finejewellery.com</p>
+</div>
+
+<!-- HARİTA -->
+<div id="map" class="section">
+    <h3>Mağaza Konumu</h3>
+
+    <iframe 
+        src="https://www.google.com/maps?q=Nişantaşı,İstanbul&output=embed"
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
+
+<br>
+<a href="index.html">← Ana Sayfaya Dön</a>
+
+<script>
+    // Sayfa açıldığında URL'e bak
+    const hash = window.location.hash;
+
+    if (hash === "#map") {
+        document.getElementById("map").style.display = "block";
+    } else {
+        document.getElementById("contact").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
